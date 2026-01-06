@@ -171,7 +171,7 @@ export default function Slideshow() {
     return (
       <div className="w-full h-screen bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-20 h-20 border-4 border-green-500/30 border-t-green-500 rounded-full animate-spin mx-auto mb-6"></div>
+          <div className="w-20 h-20 border-4 border-red-900/30 border-t-red-900 rounded-full animate-spin mx-auto mb-6"></div>
           <div className="text-white text-xl font-light animate-pulse">Préparation de votre expérience...</div>
         </div>
       </div>
@@ -215,13 +215,7 @@ export default function Slideshow() {
           <div className={`absolute inset-0 flex items-center justify-center p-6 transition-all duration-700 delay-300 ${
             index === currentSlide ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <div className="max-w-4xl text-center text-white">
-              {/* Badge */}
-              <div className="inline-block bg-green-600/20 backdrop-blur-sm border border-green-500/30 px-6 py-2 rounded-full mb-8">
-                <span className="text-green-300 font-semibold tracking-wider">
-                  SLIDE {index + 1}/{slides.length}
-                </span>
-              </div>
+            <div className="max-w-4xl text-center text-white">            
               
               {/* Titre avec animation */}
               <h2 className={`text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight transition-all duration-700 delay-500 ${
@@ -241,7 +235,7 @@ export default function Slideshow() {
               <div className={`transition-all duration-700 delay-1000 ${
                 index === currentSlide ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
-                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl shadow-2xl hover:shadow-green-600/30 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0">
+                <button className="bg-red-900 hover:bg-red-800 text-white font-bold px-8 py-4 rounded-xl shadow-2xl hover:shadow-green-600/30 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0">
                   En savoir plus
                 </button>
               </div>
@@ -344,28 +338,6 @@ export default function Slideshow() {
           <span className="font-light">{slides.length}</span>
         </div>
       </div>
-
-      {/* Instructions clavier */}
-      <div className="absolute top-8 left-8 z-30 hidden md:block">
-        <div className="bg-black/40 backdrop-blur-sm text-white/70 text-sm px-4 py-2 rounded-lg">
-          <div className="flex items-center space-x-4">
-            <span className="flex items-center space-x-1">
-              <kbd className="px-2 py-1 bg-black/50 rounded text-xs">←</kbd>
-              <kbd className="px-2 py-1 bg-black/50 rounded text-xs">→</kbd>
-              <span>Navigation</span>
-            </span>
-            <span className="flex items-center space-x-1">
-              <kbd className="px-2 py-1 bg-black/50 rounded text-xs">ESPACE</kbd>
-              <span>Suivant</span>
-            </span>
-            <span className="flex items-center space-x-1">
-              <kbd className="px-2 py-1 bg-black/50 rounded text-xs">ESC</kbd>
-              <span>{isAutoPlaying ? 'Pause' : 'Play'}</span>
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* Barre de progression */}
       <div className="absolute top-0 left-0 right-0 h-1 z-30 bg-gray-800/30">
         <div 
