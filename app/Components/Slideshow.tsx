@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from 'react'
 
 export default function Slideshow() {
   // Liste des images du slideshow
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const slides = [
     { 
       src: '/images/slide1.jpg', 
@@ -87,14 +89,6 @@ export default function Slideshow() {
     return () => clearInterval(interval)
   }, [isAutoPlaying, isTransitioning, slides.length])
 
-  const goToSlide = useCallback((index: number) => {
-    if (isTransitioning) return
-    
-    setIsTransitioning(true)
-    setCurrentSlide(index)
-    
-    setTimeout(() => setIsTransitioning(false), 1000)
-  }, [isTransitioning])
 
   const nextSlide = useCallback(() => {
     if (isTransitioning) return
