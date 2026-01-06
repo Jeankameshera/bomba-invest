@@ -244,34 +244,6 @@ export default function Slideshow() {
         </div>
       ))}
 
-      {/* Indicateurs améliorés */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-30">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`group relative transition-all duration-300 ${
-              index === currentSlide 
-                ? 'scale-125' 
-                : 'hover:scale-110'
-            }`}
-            aria-label={`Aller au slide ${index + 1}`}
-            disabled={isTransitioning}
-          >
-            <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide 
-                ? 'bg-white w-10' 
-                : 'bg-white/40 group-hover:bg-white/70'
-            }`}></div>
-            
-            {/* Tooltip sur hover */}
-            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              {slides[index].title}
-            </div>
-          </button>
-        ))}
-      </div>
-
       {/* Flèches améliorées */}
       <button
         onClick={prevSlide}
@@ -341,7 +313,7 @@ export default function Slideshow() {
       {/* Barre de progression */}
       <div className="absolute top-0 left-0 right-0 h-1 z-30 bg-gray-800/30">
         <div 
-          className="h-full bg-linear-to-r from-green-500 to-green-300 transition-all duration-500 ease-linear"
+          className="h-full bg-linear-to-r from-red-700 to-red-700 transition-all duration-500 ease-linear"
           style={{
             width: `${((currentSlide + 1) / slides.length) * 100}%`
           }}
