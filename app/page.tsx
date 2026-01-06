@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Image } from 'lucide-react'
+import { Menu, X, ChevronDown, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, } from 'lucide-react'
 import Slideshow from './Components/Slideshow'
 
 export default function Home() {
@@ -94,13 +94,12 @@ export default function Home() {
           <div className="flex justify-between items-center h-20">
             
             {/* LOGO */}
-            <div className="flex items-center">
-              <img 
-                src="/images/logo.png" 
-                alt="logo bomba invest" 
-                className="h-40 sm:h-33 md:h-40 w-auto"
-              />
-            </div>
+            <div 
+                  className="w-40 h-40 bg-contain bg-center bg-no-repeat"
+                  style={{ backgroundImage: 'url(/images/logo.png)' }}
+                  role="img"
+                   aria-label="Logo Bomba Invest">
+              </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
@@ -180,12 +179,11 @@ export default function Home() {
               
               {/* Header du menu mobile */}
               <div className="flex justify-between items-center p-6 border-b border-gray-200">
-                <div className="flex items-center">
-                  <img 
-                    src="/images/logo.png" 
-                    alt="Logo Bomba Invest" 
-                    className="h-40 sm:h-33 md:h-40 w-auto"
-                  />
+                <div 
+                  className="w-40 h-40 bg-contain bg-center bg-no-repeat"
+                  style={{ backgroundImage: 'url(/images/logo.png)' }}
+                  role="img"
+                   aria-label="Logo Bomba Invest">
                 </div>
                 <button
                   onClick={() => setIsMenuOpen(false)}
@@ -255,31 +253,12 @@ export default function Home() {
       {/* ==================== */}
       {/* CONTENU PRINCIPAL */}
       {/* ==================== */}
-      <main className={`flex-grow ${isMenuOpen ? 'opacity-50 transition-opacity duration-300' : ''}`}>
+      <main className={`grow ${isMenuOpen ? 'opacity-50 transition-opacity duration-300' : ''}`}>
         {/* Section Hero AVEC SLIDESHOW */}
         <section className="relative min-h-screen">
           <Slideshow />
           
-          {/* Contenu par-dessus le slideshow */}
-          <div className="absolute inset-0 flex items-center justify-center p-6 z-10">
-            <div className="max-w-4xl text-center">
-              <h1 className="text-4xl md:text-7xl font-black mb-6 text-white">
-                Welcome to <span className="text-red-900">BOMBA Invest</span>
-              </h1>
-              <p className="text-xl md:text-3xl text-gray-200 mb-10">
-                The world and peoples transform
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-red-900 text-white px-6 md:px-8 py-3 rounded-lg font-bold hover:bg-red-800 transition-all duration-200">
-                  Get Started
-                </button>
-                
-                <button className="bg-white/10 backdrop-blur-sm text-white border-2 border-white/40 px-6 md:px-8 py-3 rounded-lg font-bold hover:bg-white/30 transition-all duration-200">
-                  Join Now
-                </button>
-              </div>
-            </div>
-          </div>
+          
         </section>
 
         {/* Section Statistiques */}
@@ -334,14 +313,14 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               
+              
               {/* Logo et Description */}
               <div>
-                <div className="flex items-center mb-4">
-                  <img 
-                    src="/images/logo.png" 
-                    alt="Logo Bomba Invest" 
-                    className="h-40 sm:h-33 md:h-40 w-auto"
-                  />                  
+                <div 
+                  className="w-40 h-40 bg-contain bg-center bg-no-repeat"
+                  style={{ backgroundImage: 'url(/images/logo.png)' }}
+                  role="img"
+                   aria-label="Logo Bomba Invest">
                 </div>
                 <p className="text-gray-400">
                   Leader dans les solutions d investissement innovantes depuis 2025. 
